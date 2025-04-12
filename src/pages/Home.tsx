@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { FaCentercode } from "react-icons/fa";
 import CurrencySelector from '../components/CurrencySelector';
 import AmountInput from '../components/AmountInput';
 import ConversionResult from '../components/ConversionResult';
@@ -42,7 +43,10 @@ const App: React.FC = () => {
     <div className="w-full h-screen bg-blue-600 flex flex-col">
       {/* Top Navbar */}
       <header className="flex justify-between items-center px-6 py-4 text-white">
-        <div className="text-lg font-semibold">💱 Exchanger</div>
+        <div className="flex items-center gap-2">
+        <FaCentercode className='text-white'/>
+        <p className='text-lg font-semibold'>Exchanger</p>
+        </div>
         <div className="flex gap-2">
           <button className="text-sm hover:underline">Login</button>
           <button className="bg-white text-blue-600 text-sm px-3 py-1 rounded-md font-medium hover:bg-gray-100">Sign up</button>

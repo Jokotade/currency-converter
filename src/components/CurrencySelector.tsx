@@ -1,3 +1,5 @@
+import { HiChevronDown } from 'react-icons/hi';
+
 interface CurrencySelectorProps {
   label: string;
   currencies: string[];
@@ -12,12 +14,12 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
   onChangeCurrency,
 }) => {
   return (
-    <div className="flex items-center gap-4">
+    <div className="relative w-full">
       <label className="sr-only">{label}</label>
       <select
         value={selectedCurrency}
         onChange={(e) => onChangeCurrency(e.target.value)}
-        className="w-full border rounded-md px-4 py-3 text-base font-medium bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
+        className="appearance-none w-full border rounded-md px-4 py-3 pr-10 text-base font-medium bg-white focus:outline-none focus:ring-2 focus:ring-blue-400"
       >
         {currencies.map((currency) => (
           <option key={currency} value={currency}>
@@ -25,6 +27,7 @@ const CurrencySelector: React.FC<CurrencySelectorProps> = ({
           </option>
         ))}
       </select>
+      <HiChevronDown className="absolute right-3 top-1/2 transform -translate-y-1/2 text-gray-400 pointer-events-none" />
     </div>
   );
 };
